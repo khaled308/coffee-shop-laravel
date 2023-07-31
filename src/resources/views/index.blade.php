@@ -283,7 +283,11 @@
 									<h3><a href="{{route('product.getByName', $product->slug)}}">{{$product->name}}</a></h3>
 									<p>{{$product->description}}</p>
 									<p class="price"><span>${{$product->price}}</span></p>
-									<p><a href="#" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
+									<p><a href="#" class="btn btn-primary btn-outline-primary" onclick="event.preventDefault(); document.getElementById('add-cart-form-{{$product->id}}').submit();">Add to Cart</a></p>
+									<form id="add-cart-form-{{$product->id}}" action="{{route('cart.store')}}" method="POST" style="display: none;">
+										@csrf
+										<input type="hidden" name="product_id" value={{$product->id}}>
+									</form>
 								</div>
 							</div>
 					</div>

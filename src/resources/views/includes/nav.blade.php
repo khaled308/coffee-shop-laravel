@@ -6,13 +6,13 @@
      </button>
      <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
-           <li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
+           <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
            <li class="nav-item"><a href="menu.html" class="nav-link">Menu</a></li>
            <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
            <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
            <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-           <li class="nav-item cart"><a href="cart.html" class="nav-link"><span class="icon icon-shopping_cart"></span></a>
-            @auth
+           @auth
+           <li class="nav-item cart"><a href="{{route('cart.index')}}" class="nav-link"><span class="icon icon-shopping_cart"></span></a>
             <li class="nav-item">
               <a href="#" class="nav-link" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">logout</a>
               <form id="logout-form" action="/logout" method="POST" style="display: none;">

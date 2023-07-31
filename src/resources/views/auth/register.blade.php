@@ -1,8 +1,8 @@
+@extends('layouts.main')
+
 @section('carousel')
 	@include('includes.carousel', ['pageTitle' => 'Register'])]])
 @endsection
-
-@extends('layouts.main')
 
 @section('content')
 <section class="ftco-section">
