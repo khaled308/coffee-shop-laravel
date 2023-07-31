@@ -1,3 +1,9 @@
+start:
+	docker-compose up -d
+
+stop:
+	docker-compose down
+
 artisan:
 	docker-compose run --rm artisan $(filter-out $@,$(MAKECMDGOALS))
 
@@ -6,3 +12,6 @@ composer:
 
 npm:
 	docker-compose run --rm npm $(filter-out $@,$(MAKECMDGOALS))
+
+migrate:
+	docker-compose run --rm artisan migrate
