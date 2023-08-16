@@ -12,14 +12,24 @@ class CartController extends Controller
 {
     public function index()
     {
+        if(!auth()->user()->cart){
+            return redirect()->route('home');
+        }
+    
         $cartItems =  DB::table('cart_items')
         ->select('cart_items.*', 'products.*')
         ->join('products', 'cart_items.product_id', '=', 'products.id')
         ->where('cart_items.cart_id', auth()->user()->cart->id)
         ->get();
-        // dd($cartItems[0]);
+        
+        $cartTotal = 0;
+        foreach ($cartItems as $cartItem) {
+            $cartTotal += $cartItem->price * $cartItem->quantity;
+        }
+    
         return view('cart', [
-            'cartItems' => $cartItems
+            'cartItems' => $cartItems,
+            'cartTotal' => $cartTotal,
         ]);
     }
 
@@ -51,9 +61,5 @@ class CartController extends Controller
     public function removeItem(Request $request, Product $product){
         CartItem::where('cart_id', auth()->user()->cart->id)->where('product_id', $product->id)->delete();
         return redirect()->route('cart.index');
-    }
-
-    public function updateItem(){
-
     }
 }

@@ -64,9 +64,10 @@
 					<div class="cart-total mb-3">
 						<h3>Cart Totals</h3>
 						<p class="d-flex">
-							<span>Subtotal</span>
-							<span>$20.60</span>
+							<span>Total</span>
+							<span>${{$cartTotal}}</span>
 						</p>
+						<!--
 						<p class="d-flex">
 							<span>Delivery</span>
 							<span>$0.00</span>
@@ -80,8 +81,13 @@
 							<span>Total</span>
 							<span>$17.60</span>
 						</p>
+					-->
 					</div>
-					<p class="text-center"><a href="checkout.html" class="btn btn-primary py-3 px-4">Proceed to Checkout</a></p>
+					@if (count($cartItems) > 0)
+						<p class="text-center">
+							<a href="{{route('checkout')}}" class="btn btn-primary py-3 px-4">Proceed to Checkout</a>
+						</p>
+					@endif
 				</div>
 			</div>
 		</div>
