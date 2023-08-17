@@ -82,37 +82,39 @@
 						</div>
 					</div>
 				</div>
+				@auth
 				<div class="book p-4">
 					<h3>Book a Table</h3>
-					<form action="#" class="appointment-form">
+					<form action="{{route('booking.store')}}" class="appointment-form" method="POST">
+						@csrf
 						<div class="d-md-flex">
 							<div class="form-group">
-								<input type="text" class="form-control" placeholder="First Name">
+								<input type="text" class="form-control" placeholder="First Name" name="first_name">
 							</div>
 							<div class="form-group ml-md-4">
-								<input type="text" class="form-control" placeholder="Last Name">
+								<input type="text" class="form-control" placeholder="Last Name" name="last_name">
 							</div>
 						</div>
 						<div class="d-md-flex">
 							<div class="form-group">
 								<div class="input-wrap">
 							<div class="icon"><span class="ion-md-calendar"></span></div>
-							<input type="text" class="form-control appointment_date" placeholder="Date">
+							<input type="text" class="form-control appointment_date" placeholder="Date" name="date">
 						</div>
 							</div>
 							<div class="form-group ml-md-4">
 								<div class="input-wrap">
 							<div class="icon"><span class="ion-ios-clock"></span></div>
-							<input type="text" class="form-control appointment_time" placeholder="Time">
+							<input type="text" class="form-control appointment_time" placeholder="Time" name="time">
 						</div>
 							</div>
 							<div class="form-group ml-md-4">
-								<input type="text" class="form-control" placeholder="Phone">
+								<input type="text" class="form-control" placeholder="Phone" name="phone">
 							</div>
 						</div>
 						<div class="d-md-flex">
 							<div class="form-group">
-					<textarea name="" id="" cols="30" rows="2" class="form-control" placeholder="Message"></textarea>
+					<textarea id="" cols="30" rows="2" class="form-control" placeholder="Message" name="message"></textarea>
 					</div>
 					<div class="form-group ml-md-4">
 					<input type="submit" value="Appointment" class="btn btn-white py-3 px-4">
@@ -120,6 +122,7 @@
 						</div>
 					</form>
 				</div>
+				@endauth
 			</div>
 		</div>
 	</section>
