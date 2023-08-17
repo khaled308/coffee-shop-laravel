@@ -25,4 +25,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/booking', [BookingController::class, 'store'])->name('booking.store');
 });
 
+require __DIR__.'/admin.php';
 require __DIR__.'/auth.php';
