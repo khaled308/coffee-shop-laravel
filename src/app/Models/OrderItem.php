@@ -14,4 +14,6 @@ class OrderItem extends Model
         'quantity',
         'price',
     ];
+
+    protected $table = 'order_item';
 }

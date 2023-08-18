@@ -9,21 +9,21 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav side-nav" >
         <li class="nav-item">
-          <a class="nav-link" style="margin-left: 20px;" href="index.html">Home
+          <a class="nav-link" style="margin-left: 20px;" href="{{route('admin.index')}}">Home
             <span class="sr-only">(current)</span>
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="admins/admins.html" style="margin-left: 20px;">Admins</a>
+          <a class="nav-link" href="{{route('admin.users.index')}}" style="margin-left: 20px;">Users</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="orders-admins/show-orders.html" style="margin-left: 20px;">Orders</a>
+          <a class="nav-link" href="{{route('admin.orders.index')}}" style="margin-left: 20px;">Orders</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="products-admins/show-products.html" style="margin-left: 20px;">Products</a>
+          <a class="nav-link" href="{{route('admin.products.index')}}" style="margin-left: 20px;">Products</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="bookings-admins/show-bookings.html" style="margin-left: 20px;">Bookings</a>
+          <a class="nav-link" href="{{route('admin.bookings.index')}}" style="margin-left: 20px;">Bookings</a>
         </li>
       </ul>
       <ul class="navbar-nav ml-md-auto d-md-flex">

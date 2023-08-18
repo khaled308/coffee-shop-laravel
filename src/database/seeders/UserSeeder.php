@@ -14,13 +14,12 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('users')->truncate();
-
         DB::table('users')->insert([
             [
                 'name' => 'User ',
                 'email' => 'user@example.com',
                 'password' => Hash::make('123456'),
+                'is_admin' => false,
             ],
             [
                 'name' => 'admin',
